@@ -275,8 +275,35 @@ export default function Page() {
               <p className="text-base text-white/50 mb-6 leading-relaxed max-w-2xl">
                 Anyone can propose an idea. The community funds it through{" "}
                 <span className="text-white/80 font-medium">IdeaCoins</span> — treasury-backed tokens.
-                Builders are selected via futarchy to execute. No grants, no exit liquidity.
+                Builders are selected via futarchy during a hackathon to execute. No grants, no exit liquidity.
               </p>
+            </FadeIn>
+
+            <FadeIn delay={0.35}>
+              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5 mb-4">
+                <h3 className="text-xs font-semibold text-orange-400/80 uppercase tracking-wider mb-4">
+                  How it works
+                </h3>
+                <div className="flex items-center justify-center gap-2 flex-wrap">
+                  {[
+                    { label: "Idea", color: "text-white/60", bg: "bg-white/5" },
+                    { label: "Investment", color: "text-orange-400/80", bg: "bg-orange-500/10" },
+                    { label: "IdeaCoin", color: "text-amber-400/80", bg: "bg-amber-500/10" },
+                    { label: "Hackathon", color: "text-yellow-400/80", bg: "bg-yellow-500/10" },
+                    { label: "Builder", color: "text-emerald-400/80", bg: "bg-emerald-500/10" },
+                    { label: "Product", color: "text-purple-400/80", bg: "bg-purple-500/10" },
+                  ].map((step, i, arr) => (
+                    <div key={step.label} className="flex items-center gap-2">
+                      <span className={`px-3 py-2 rounded-lg ${step.bg} ${step.color} text-sm font-medium`}>
+                        {step.label}
+                      </span>
+                      {i < arr.length - 1 && (
+                        <ArrowRight className="w-3.5 h-3.5 text-white/20" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </FadeIn>
 
             <FadeIn delay={0.4}>
@@ -766,7 +793,7 @@ export default function Page() {
                 { name: "Combinator.trade", logo: "/combinator.svg" },
                 { name: "SwissBorg", logo: "/swissborg.jpg" },
                 { name: "Omnipair", logo: "/omnipair.png" },
-                { name: "Global Dollar Network", logo: "/paxos.jpg" },
+                { name: "Global Dollar Network", logo: "/gdn.png" },
               ].map((partner, i) => (
                 <FadeIn key={partner.name} delay={0.3 + i * 0.1}>
                   <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5 flex flex-col items-center justify-center hover:border-orange-500/20 transition-colors h-32 gap-3">
@@ -813,8 +840,8 @@ export default function Page() {
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   {[
                     { label: "Spark Platform", icon: Rocket, href: "https://justspark.fun/ideas" },
-                    { label: "Twitter", icon: Send, href: "https://x.com/JustSparkIdeas" },
-                    { label: "Telegram", icon: Globe, href: "https://t.me/sparkdotfun" },
+                    { label: "Twitter", icon: Send, href: "https://x.com/Mathis_btc" },
+                    { label: "Telegram", icon: Globe, href: "https://t.me/Mathis_btc" },
                   ].map((link) => (
                     <a
                       key={link.label}
